@@ -1,0 +1,41 @@
+.navbar-fixed-top {
+
+  background-color: #333333;
+  z-index: 99999;
+  border-color: transparent;
+
+}
+.navbar-default .navbar-nav>li>a {color: white;}
+#navbar > ul > li > a:focus, #navbar > ul > li > a:hover {color:white;}
+#navbar > form > div > input {
+  width:700px;
+  height: 35px;
+  border-color: transparent;
+
+}
+#navbar > form > button {
+  background-color: rgb(181, 30, 42);
+  border-color: transparent;
+}
+#find-property > div > div:nth-child(5) {
+  margin-top:15px;
+}
+.wide .footer, .boxed .footer > .container {
+  padding-top: 0px;
+}
+body > div.wrapper > footer > div > ul > li {
+  border-right: 1px solid white;
+}
+body > div.wrapper > footer > div > ul > li> a:hover {
+  background-color: #3F89D8;
+  color: white;
+}
+
+.modal {
+  top:5%;
+  z-index: 99999;
+}
+
+.map-filter {
+  z-index: 1;
+}
