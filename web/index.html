@@ -4,180 +4,183 @@
 <!--[if IE 8 ]><html class="ie ie8" lang="en"><![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!-->
 <html lang="en"><!--<![endif]-->
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My All Bookings</title>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>My All Bookings</title>
 
-    <!-- Favicons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+        <!-- Favicons -->
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="shortcut icon" href="assets/ico/favicon.png">
 
-    <!-- JS Page -->
+        <!-- JS Page -->
 
-    <!-- CSS Global -->
-    <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="assets/plugins/superfish/css/superfish.css" rel="stylesheet">
-    <link href="assets/plugins/prettyPhoto/css/prettyPhoto.css" rel="stylesheet">
-    <link href="assets/plugins/animate.css" rel="stylesheet">
-    <!-- CSS Page Level -->
-    <link href="assets/plugins/isotope/jquery.isotope.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/plugins/bootstrap-select/bootstrap-select.css">
-<script src="assets/plugins/jquery.min.js"></script>
-<script src="assets/plugins/jquery-migrate.min.js"></script>
-<script src="assets/plugins/modernizr.custom.js"></script>
-<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-<script src="assets/plugins/superfish/js/superfish.js"></script>
-<script src="assets/plugins/prettyPhoto/js/jquery.prettyPhoto.js"></script>
-<script src="assets/plugins/placeholdem.min.js"></script>
-<script src="assets/plugins/ajax-mail.js"></script>
+        <!-- CSS Global -->
+        <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <link href="assets/plugins/superfish/css/superfish.css" rel="stylesheet">
+        <link href="assets/plugins/prettyPhoto/css/prettyPhoto.css" rel="stylesheet">
+        <link href="assets/plugins/animate.css" rel="stylesheet">
+        <!-- CSS Page Level -->
+        <link href="assets/plugins/isotope/jquery.isotope.css" rel="stylesheet">
+        <link rel="stylesheet" href="assets/plugins/bootstrap-select/bootstrap-select.css">
+        <script src="assets/plugins/jquery.min.js"></script>
+        <script src="assets/plugins/jquery-migrate.min.js"></script>
+        <script src="assets/plugins/modernizr.custom.js"></script>
+        <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/plugins/superfish/js/superfish.js"></script>
+        <script src="assets/plugins/prettyPhoto/js/jquery.prettyPhoto.js"></script>
+        <script src="assets/plugins/placeholdem.min.js"></script>
+        <script src="assets/plugins/ajax-mail.js"></script>
 
-<!-- JS Page Level -->
-<script src="assets/plugins/flexslider/jquery.flexslider-min.js"></script>
-<script src="assets/plugins/owl-carousel/owl.carousel.min.js"></script>
-<script src="assets/plugins/waypoints.min.js"></script>
-<script src="assets/plugins/jquery.stellar.min.js"></script>
+        <!-- JS Page Level -->
+        <script src="assets/plugins/flexslider/jquery.flexslider-min.js"></script>
+        <script src="assets/plugins/owl-carousel/owl.carousel.min.js"></script>
+        <script src="assets/plugins/waypoints.min.js"></script>
+        <script src="assets/plugins/jquery.stellar.min.js"></script>
 
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
-<script type="text/javascript">
-    var script = '<script type="text/javascript" src="http://google-maps-' +
-            'utility-library-v3.googlecode.com/svn/trunk/infobubble/src/infobubble';
-    if (document.location.search.indexOf('compiled') !== -1) {
-        script += '-compiled';
-    }
-    script += '.js"><' + '/script>';
-    document.write(script);
-</script>
-<script src="assets/plugins/gmaps/gmap.js"></script>
-
-<script src="assets/plugins/isotope/jquery.isotope.min.js"></script>
-<script src="assets/plugins/bootstrap-select/bootstrap-select.js"></script>
-
-<script src="assets/js/theme.js"></script>
-<script src="assets/js/pages/index.js"></script>
-<script type="text/javascript">
-    jQuery(document).ready(function () {
-        theme.init();
-        theme.initTestimonials();
-        theme.initAnimation();
-        theme.initResponsiveSearch();
-        theme.initIsotope();
-        theme.initSlidingSearch();
-
-    });
-    jQuery(window).on('load', function () {
-      Modernizr.load({
-test: Modernizr.inputtypes.date,
-nope: ['assets/plugins/jquery.min.js', 'assets/plugins/jquery-ui.js', 'assets/plugins/jquery-ui/jquery-ui.css'],
-complete: function () {
-  $('input[type=date]').datepicker({
-    dateFormat: 'yy-mm-dd'
-  });
-}
-});
-
-        $('.selectpicker').selectpicker();
-    });
-
-</script>
-
-    <link href="assets/css/theme.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
-	<script>
-		function login() {
-			console.log("login called");
-			// alert("login successful");
-
-            var request = $.ajax({
-                url: "http://localhost:8080/signIn",
-                type: "POST",
-                 headers: { "Accept": "application/json",
-                    "emailId": document.getElementById("txtEmail").value,
-                    "password": document.getElementById("txtPassword").value,
-                    "Access-Control-Allow-Origin": "*",
-					"User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:40.0) Gecko/20100101 Firefox/40.0",
-                },
-                xhrFields: {
-                    withCredentials: false,
-                    crossDomain: true
-                }
-            });
-            request.done(function(msg) {
-                if (msg['success'] == "true" && msg['type'] == "business") {
-			console.log("business");
-                        document.getElementById("check").className = "alert alert-dismissible alert-success";
-                	document.getElementById("check").innerHTML = "logged in as Businessowner";
-                    window.location = "dashboard.html";
-                } else if (msg['type'] == "admin" && msg['success'] == "true") {
-			console.log("admin");
-                        document.getElementById("check").className = "alert alert-dismissible alert-success";
-                	document.getElementById("check").innerHTML = "logged in as "+  msg['type'];
-                     window.location = "dashboard.html";
-                } else if (msg['type'] == "guest" && msg['success'] == "true") {
-			console.log("guest");
-                        document.getElementById("check").className = "alert alert-dismissible alert-success";
-                	document.getElementById("check").innerHTML = "logged in successful ";
-                     window.location = "index.html";
-                } else{
-                        document.getElementById("check").className = "alert alert-dismissible alert-danger";
-                	document.getElementById("check").innerHTML = msg['success'];
-                }
-            });
-
-            request.fail(function(jqXHR, textStatus) {
-                        document.getElementById("check").className = "alert alert-dismissible alert-danger";
-                	document.getElementById("check").innerHTML = "Unable to connect Try Again.";
-            });
-		}
-
-	</script>
-<script>
-        function checkType (type) {
-            var temp = "";
-            switch(type){
-                case "Restaurent":
-                    temp=" rent";
-                    break;
-                case "SPA":
-                    temp = " sale";
-                    break;
-                case "Bar":
-                    temp=" apartment";
-                    break;
-                default:
-                    temp=" rent";
-                    break;
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+        <script type="text/javascript">
+            var script = '<script type="text/javascript" src="http://google-maps-' +
+                    'utility-library-v3.googlecode.com/svn/trunk/infobubble/src/infobubble';
+            if (document.location.search.indexOf('compiled') !== -1) {
+                script += '-compiled';
             }
-            
-            return temp;
-        }
-        function setMostPopular() {
-            console.log("setMostPopular called");
-            // alert("login successful");
+            script += '.js"><' + '/script>';
+            document.write(script);
+        </script>
+        <script src="assets/plugins/gmaps/gmap.js"></script>
 
-            var request = $.ajax({
-                url: "http://localhost:8080/getMostPopular",
-                type: "GET",
-                 headers: { "Accept": "application/json",
-                    "Access-Control-Allow-Origin": "*",
-                    "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:40.0) Gecko/20100101 Firefox/40.0",
-                },
-                xhrFields: {
-                    withCredentials: false,
-                    crossDomain: true
-                }
+        <script src="assets/plugins/isotope/jquery.isotope.min.js"></script>
+        <script src="assets/plugins/bootstrap-select/bootstrap-select.js"></script>
+
+        <script src="assets/js/theme.js"></script>
+        <script src="assets/js/pages/index.js"></script>
+        <script type="text/javascript">
+            jQuery(document).ready(function() {
+                theme.init();
+                theme.initTestimonials();
+                theme.initAnimation();
+                theme.initResponsiveSearch();
+                theme.initIsotope();
+                theme.initSlidingSearch();
+
             });
-            request.done(function(msg) {
-                // console.log(msg);
+            jQuery(window).on('load', function() {
+                Modernizr.load({
+                    test: Modernizr.inputtypes.date,
+                    nope: ['assets/plugins/jquery.min.js', 'assets/plugins/jquery-ui.js', 'assets/plugins/jquery-ui/jquery-ui.css'],
+                    complete: function() {
+                        $('input[type=date]').datepicker({
+                            dateFormat: 'yy-mm-dd'
+                        });
+                    }
+                });
+
+                $('.selectpicker').selectpicker();
+            });
+
+        </script>
+
+        <link href="assets/css/theme.css" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <script>
+            function login() {
+                console.log("login called");
+                // alert("login successful");
+
+                var request = $.ajax({
+                    url: "http://localhost:8080/signIn",
+                    type: "POST",
+                    headers: {"Accept": "application/json",
+                        "emailId": document.getElementById("txtEmail").value,
+                        "password": document.getElementById("txtPassword").value,
+                        "Access-Control-Allow-Origin": "*",
+                        "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:40.0) Gecko/20100101 Firefox/40.0",
+                    },
+                    xhrFields: {
+                        withCredentials: false,
+                        crossDomain: true
+                    }
+                });
+                request.done(function(msg) {
+                    if (msg['success'] == "true") {
+                        if (msg['type'] == "business") {
+                            console.log("business");
+                            document.getElementById("check").className = "alert alert-dismissible alert-success";
+                            document.getElementById("check").innerHTML = "logged in as Businessowner";
+                            window.location = "dashboard.html";
+                        } else if (msg['type'] == "admin") {
+                            console.log("admin");
+                            document.getElementById("check").className = "alert alert-dismissible alert-success";
+                            document.getElementById("check").innerHTML = "logged in as " + msg['type'];
+                            window.location = "dashboard.html";
+                        } else {
+                            console.log("guest");
+                            document.getElementById("check").className = "alert alert-dismissible alert-success";
+                            document.getElementById("check").innerHTML = "logged in successful ";
+                            window.location = "index.html";
+                        }
+
+                    } else {
+                        document.getElementById("check").className = "alert alert-dismissible alert-danger";
+                        document.getElementById("check").innerHTML = msg['success'];
+                    }
+                });
+
+                request.fail(function(jqXHR, textStatus) {
+                    document.getElementById("check").className = "alert alert-dismissible alert-danger";
+                    document.getElementById("check").innerHTML = "Unable to connect Try Again.";
+                });
+            }
+
+        </script>
+        <script>
+            function checkType(type) {
+                var temp = "";
+                switch (type) {
+                    case "Restaurent":
+                        temp = " rent";
+                        break;
+                    case "SPA":
+                        temp = " sale";
+                        break;
+                    case "Bar":
+                        temp = " apartment";
+                        break;
+                    default:
+                        temp = " rent";
+                        break;
+                }
+
+                return temp;
+            }
+            function setMostPopular() {
+                console.log("setMostPopular called");
+                // alert("login successful");
+
+                var request = $.ajax({
+                    url: "http://localhost:8080/getMostPopular",
+                    type: "GET",
+                    headers: {"Accept": "application/json",
+                        "Access-Control-Allow-Origin": "*",
+                        "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:40.0) Gecko/20100101 Firefox/40.0",
+                    },
+                    xhrFields: {
+                        withCredentials: false,
+                        crossDomain: true
+                    }
+                });
+                request.done(function(msg) {
+                    // console.log(msg);
                     var data = msg[0];
                     console.log(data);
                     document.getElementById("article1").className = document.getElementById("article1").className + checkType(data['type']);
                     document.getElementById("article1Name").innerHTML = data['name'];
                     document.getElementById("article1Address").innerHTML = data['rating'];
                     document.getElementById("article1Lable").innerHTML = data['type'];
-                    document.getElementById("article1Image").src=("./assets/img/realestate/"+data['imageId']).toString();
+                    document.getElementById("article1Image").src = ("./assets/img/realestate/" + data['imageId']).toString();
                     document.getElementById("article1Price").innerHTML = data['price'];
                     document.getElementById("article1Details").innerHTML = "Details";
                     var data = msg[1];
@@ -186,7 +189,7 @@ complete: function () {
                     document.getElementById("article2Name").innerHTML = data['name'];
                     document.getElementById("article2Address").innerHTML = data['rating'];
                     document.getElementById("article2Lable").innerHTML = data['type'];
-                    document.getElementById("article2Image").src=("./assets/img/realestate/"+data['imageId']).toString();
+                    document.getElementById("article2Image").src = ("./assets/img/realestate/" + data['imageId']).toString();
                     document.getElementById("article2Price").innerHTML = data['price'];
                     document.getElementById("article2Details").innerHTML = "Details";
                     var data = msg[2];
@@ -195,7 +198,7 @@ complete: function () {
                     document.getElementById("article3Name").innerHTML = data['name'];
                     document.getElementById("article3Address").innerHTML = data['rating'];
                     document.getElementById("article3Lable").innerHTML = data['type'];
-                    document.getElementById("article3Image").src="./assets/img/realestate/"+data['imageId'];
+                    document.getElementById("article3Image").src = "./assets/img/realestate/" + data['imageId'];
                     document.getElementById("article3Price").innerHTML = data['price'];
                     document.getElementById("article3Details").innerHTML = "Details";
                     var data = msg[3];
@@ -204,7 +207,7 @@ complete: function () {
                     document.getElementById("article4Name").innerHTML = data['name'];
                     document.getElementById("article4Address").innerHTML = data['rating'];
                     document.getElementById("article4Lable").innerHTML = data['type'];
-                    document.getElementById("article4Image").src="./assets/img/realestate/"+data['imageId'];
+                    document.getElementById("article4Image").src = "./assets/img/realestate/" + data['imageId'];
                     document.getElementById("article4Price").innerHTML = data['price'];
                     document.getElementById("article4Details").innerHTML = "Details";
                     var data = msg[4];
@@ -213,7 +216,7 @@ complete: function () {
                     document.getElementById("article5Name").innerHTML = data['name'];
                     document.getElementById("article5Address").innerHTML = data['rating'];
                     document.getElementById("article5Lable").innerHTML = data['type'];
-                    document.getElementById("article5Image").src="./assets/img/realestate/"+data['imageId'];
+                    document.getElementById("article5Image").src = "./assets/img/realestate/" + data['imageId'];
                     document.getElementById("article5Price").innerHTML = data['price'];
                     document.getElementById("article5Details").innerHTML = "Details";
                     var data = msg[5];
@@ -222,7 +225,7 @@ complete: function () {
                     document.getElementById("article6Name").innerHTML = data['name'];
                     document.getElementById("article6Address").innerHTML = data['rating'];
                     document.getElementById("article6Lable").innerHTML = data['type'];
-                    document.getElementById("article6Image").src="./assets/img/realestate/"+data['imageId'];
+                    document.getElementById("article6Image").src = "./assets/img/realestate/" + data['imageId'];
                     document.getElementById("article6Price").innerHTML = data['price'];
                     document.getElementById("article6Details").innerHTML = "Details";
                     var data = msg[6];
@@ -231,7 +234,7 @@ complete: function () {
                     document.getElementById("article7Name").innerHTML = data['name'];
                     document.getElementById("article7Address").innerHTML = data['rating'];
                     document.getElementById("article7Lable").innerHTML = data['type'];
-                    document.getElementById("article7Image").src="./assets/img/realestate/"+data['imageId'];
+                    document.getElementById("article7Image").src = "./assets/img/realestate/" + data['imageId'];
                     document.getElementById("article7Price").innerHTML = data['price'];
                     document.getElementById("article7Details").innerHTML = "Details";
                     var data = msg[7];
@@ -240,7 +243,7 @@ complete: function () {
                     document.getElementById("article8Name").innerHTML = data['name'];
                     document.getElementById("article8Address").innerHTML = data['rating'];
                     document.getElementById("article8Lable").innerHTML = data['type'];
-                    document.getElementById("article8Image").src="./assets/img/realestate/"+data['imageId'];
+                    document.getElementById("article8Image").src = "./assets/img/realestate/" + data['imageId'];
                     document.getElementById("article8Price").innerHTML = data['price'];
                     document.getElementById("article8Details").innerHTML = "Details";
                     var data = msg[8];
@@ -249,686 +252,686 @@ complete: function () {
                     document.getElementById("article9Name").innerHTML = data['name'];
                     document.getElementById("article9Address").innerHTML = data['rating'];
                     document.getElementById("article9Lable").innerHTML = data['type'];
-                    document.getElementById("article9Image").src="/assets/img/realestate/"+data['imageId'];
+                    document.getElementById("article9Image").src = "/assets/img/realestate/" + data['imageId'];
                     document.getElementById("article9Price").innerHTML = data['price'];
                     document.getElementById("article9Details").innerHTML = "Details";
-            });
+                });
 
-            request.fail(function(jqXHR, textStatus) {
-                alert("unable to connect");
-            });
-        }
-        window.onpaint = setMostPopular();
+                request.fail(function(jqXHR, textStatus) {
+                    alert("unable to connect");
+                });
+            }
+            window.onpaint = setMostPopular();
 
-    </script>
+        </script>
 
-    <!--[if lt IE 9]>
-    <script src="assets/plugins/html5shiv.js"></script>
-    <script src="assets/plugins/respond.min.js"></script>
-    <![endif]-->
-</head>
-<body class="wide">
+        <!--[if lt IE 9]>
+        <script src="assets/plugins/html5shiv.js"></script>
+        <script src="assets/plugins/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body class="wide">
 
-<!-- Wrap all content -->
-<div class="wrapper">
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#"><span style="color:#3F89D8;"><i class="fa fa-key" style="padding-right:5px;"></i>My All</span> Bookings</a>
-        </div>
+        <!-- Wrap all content -->
+        <div class="wrapper">
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#"><span style="color:#3F89D8;"><img src="/assets/img/logo.png" style="padding-right:5px;" width="23px" height="20px"></img>My All</span> Bookings</a>
+                    </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="navbar">
-
-
-          <ul class="sf-menu nav navbar-nav navbar-right">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Agents</a></li>
-            <li><a href="#">Blog</a>
-              <ul class="sub-menu">
-                  <li><a href="#" data-toggle="modal" data-target="#ModalSoon">Blog Default</a></li>
-                  <li><a href="#" data-toggle="modal" data-target="#ModalSoon">Blog Single</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Properties</a>
-              <ul class="sub-menu">
-                  <li><a href="#" data-toggle="modal" data-target="#ModalSoon">Properties</a></li>
-                  <li><a href="#" data-toggle="modal" data-target="#ModalSoon">Property single</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Contacts</a></li>
-            <li><a href="#">User<span class="glyphicon glyphicon-user" style="padding-left:5px;"></span></a>
-              <ul class="sub-menu">
-              <li><a href="#" data-toggle="modal" data-target="#ModalLogin">Login</a></li>
-              <li><a href="#" data-toggle="modal" data-target="#ModalRegister">Register</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="navbar">
 
 
-    <!-- Content area-->
-    <div class="content-area content">
+                        <ul class="sf-menu nav navbar-nav navbar-right">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Agents</a></li>
+                            <li><a href="#">Blog</a>
+                                <ul class="sub-menu">
+                                    <li><a href="#" data-toggle="modal" data-target="#ModalSoon">Blog Default</a></li>
+                                    <li><a href="#" data-toggle="modal" data-target="#ModalSoon">Blog Single</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Properties</a>
+                                <ul class="sub-menu">
+                                    <li><a href="#" data-toggle="modal" data-target="#ModalSoon">Properties</a></li>
+                                    <li><a href="#" data-toggle="modal" data-target="#ModalSoon">Property single</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Contacts</a></li>
+                            <li><a href="#">User<span class="glyphicon glyphicon-user" style="padding-left:5px;"></span></a>
+                                <ul class="sub-menu">
+                                    <li><a href="#" data-toggle="modal" data-target="#ModalLogin">Login</a></li>
+                                    <li><a href="#" data-toggle="modal" data-target="#ModalRegister">Register</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </nav>
 
-        <!-- Google Map -->
-        <div class="google-map">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-8 col-xs-offset-4 col-sm-4 col-sm-offset-8 col-md-3 col-md-offset-9 map-filter-wrapper">
-                        <div class="map-filter">
-                            <form name="find-property" method="post" action="#find-property" class="find-property" id="find-property">
+
+            <!-- Content area-->
+            <div class="content-area content">
+
+                <!-- Google Map -->
+                <div class="google-map">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-8 col-xs-offset-4 col-sm-4 col-sm-offset-8 col-md-3 col-md-offset-9 map-filter-wrapper">
+                                <div class="map-filter">
+                                    <form name="find-property" method="post" action="#find-property" class="find-property" id="find-property">
+                                        <div class="row">
+                                            <div class="col-xs-12 af-outer af-required">
+                                                <div class="filter-title">Search Criteria</div>
+                                                <div class="select-wrapper">
+                                                    <input type="text" name="search-criteria" id="criteria" size="30" value="" placeholder="Area/City/Business name" class="form-control placeholder" />
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xs-12 af-outer af-required">
+                                                <div class="filter-title">Date</div>
+                                                <div class="input-group">
+                                                    <input type="date" name="sdate" id="date" size="30" value="" class="form-control placeholder"/>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xs-6 af-outer af-required">
+                                                <div class="filter-title">Session</div>
+                                                <div class="select-wrapper">
+                                                    <select id="property" name="property" class="selectpicker">
+                                                        <option value="none">Morning</option>
+                                                        <option value="0">Afternoon</option>
+                                                        <option value="1">Evening</option>
+                                                        <option value="2">Night</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-6 af-outer af-required">
+                                                <div class="filter-title">Guest</div>
+                                                <div class="input-group af-inner">
+                                                    <input type="number" class="form-control" min="0" id="gnumber"/>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xs-12 af-outer af-required">
+                                                <div class="form-group af-inner">
+                                                    <!-- To Do, Coming Soon Added -->
+                                                    <input type="button" data-toggle="modal" data-target="#ModalSoon" name="submit" class="form-button btn btn-default" id="submit_btn" value="Search" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="map-canvas"></div>
+                </div>
+                <!-- /Google Map -->
+
+                <!-- Call action -->
+                <section class="page-section dark">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 text-center" data-animation="fadeInLeft" data-animation-delay="100">
+                                <h2 class="media-heading"><a href="addproperty.html">30</a> Days Trial for business Owner</h2>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- /Call action -->
+
+                <!-- Most Popular Properties  -->
+                <section class="page-section">
+                    <div class="container">
+                        <div class="" data-animation="fadeInUp" data-animation-delay="0">
+                            <div class="block-title text-center">Most Popular</div>
+                        </div>
+                        <div class="clearfix text-center">
+                            <ul id="filtrable" class="filtrable clearfix" data-animation="fadeInUp" data-animation-delay="100">
+                                <li class="all current"><a href="#" data-filter="*">All</a></li>
+                                <li class="rent"><a href="#" data-filter=".rent">Restaurent</a></li>
+                                <li class="sale"><a href="#" data-filter=".sale">SPA</a></li>
+                                <li class="apartment"><a href="#" data-filter=".apartment">Beer Bars</a></li>
+                            </ul>
+                        </div>
+                        <div class="container projects">
+                            <section class="row items no-padding-off">
+                                <article class="item col-sm-6 col-md-4" id="article1">
+                                    <div class="property-wrap">
+                                        <div class="property-inner">
+                                            <h3 class="property-title">
+                                                <a href="#" id="article1Name">Harrison Restaurent</a>
+                                            </h3>
+                                            <h4 class="property-subtitle">
+                                                <a href="#" id="article1Address">Monson Walk</a>
+                                            </h4>
+                                            <div class="property-label property-label-primary" id="article1Lable">Hotel</div>
+                                            <div class="property-picture">
+                                                <div class="thumbnail do-hover">
+
+                                                    <img class="img-responsive" id="article1Image" src="assets/img/realestate/1.jpg" alt=""/>
+                                                    <div class="caption">
+                                                        <div class="caption-wrapper div-table">
+                                                            <div class="caption-inner div-cell">
+                                                                <p class="caption-buttons">
+                                                                    <a href="assets/img/realestate/1-big.jpg" class="btn caption-zoom" data-gal="prettyPhoto"><i class="fa fa-search"></i></a>
+                                                                    <a href="property-single.html" class="btn caption-link"><i class="fa fa-link"></i></a>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="property-meta">
+                                                <div class="col-sm-6" id="article1Price">
+                                                    <strong>$1111</strong> / month
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <a href="property-single.html" id="article1Details">Details</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item col-sm-6 col-md-4" id="article2">
+                                    <div class="property-wrap">
+                                        <div class="property-inner">
+                                            <h3 class="property-title">
+                                                <a href="#" id="article2Name">Harrison Restaurent</a>
+                                            </h3>
+                                            <h4 class="property-subtitle">
+                                                <a href="#" id="article2Address">Monson Walk</a>
+                                            </h4>
+                                            <div class="property-label property-label-primary" id="article2Lable">Hotel</div>
+                                            <div class="property-picture">
+                                                <div class="thumbnail do-hover">
+
+                                                    <img class="img-responsive" id="article2Image" src="assets/img/realestate/1.jpg" alt=""/>
+                                                    <div class="caption">
+                                                        <div class="caption-wrapper div-table">
+                                                            <div class="caption-inner div-cell">
+                                                                <p class="caption-buttons">
+                                                                    <a href="assets/img/realestate/1-big.jpg" class="btn caption-zoom" data-gal="prettyPhoto"><i class="fa fa-search"></i></a>
+                                                                    <a href="property-single.html" class="btn caption-link"><i class="fa fa-link"></i></a>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="property-meta">
+                                                <div class="col-sm-6" id="article2Price">
+                                                    <strong>$1111</strong> / month
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <a href="property-single.html" id="article2Details">Details</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item col-sm-6 col-md-4" id="article3">
+                                    <div class="property-wrap">
+                                        <div class="property-inner">
+                                            <h3 class="property-title">
+                                                <a href="#" id="article3Name">Harrison Restaurent</a>
+                                            </h3>
+                                            <h4 class="property-subtitle">
+                                                <a href="#" id="article3Address">Monson Walk</a>
+                                            </h4>
+                                            <div class="property-label property-label-primary" id="article3Lable">Hotel</div>
+                                            <div class="property-picture">
+                                                <div class="thumbnail do-hover">
+
+                                                    <img class="img-responsive" id="article3Image" src="assets/img/realestate/1.jpg" alt=""/>
+                                                    <div class="caption">
+                                                        <div class="caption-wrapper div-table">
+                                                            <div class="caption-inner div-cell">
+                                                                <p class="caption-buttons">
+                                                                    <a href="assets/img/realestate/1-big.jpg" class="btn caption-zoom" data-gal="prettyPhoto"><i class="fa fa-search"></i></a>
+                                                                    <a href="property-single.html" class="btn caption-link"><i class="fa fa-link"></i></a>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="property-meta">
+                                                <div class="col-sm-6" id="article3Price">
+                                                    <strong>$1111</strong> / month
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <a href="property-single.html" id="article3Details">Details</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item col-sm-6 col-md-4" id="article4">
+                                    <div class="property-wrap">
+                                        <div class="property-inner">
+                                            <h3 class="property-title">
+                                                <a href="#" id="article4Name">Harrison Restaurent</a>
+                                            </h3>
+                                            <h4 class="property-subtitle">
+                                                <a href="#" id="article4Address">Monson Walk</a>
+                                            </h4>
+                                            <div class="property-label property-label-primary" id="article4Lable">Hotel</div>
+                                            <div class="property-picture">
+                                                <div class="thumbnail do-hover">
+
+                                                    <img class="img-responsive" id="article4Image" src="assets/img/realestate/1.jpg" alt=""/>
+                                                    <div class="caption">
+                                                        <div class="caption-wrapper div-table">
+                                                            <div class="caption-inner div-cell">
+                                                                <p class="caption-buttons">
+                                                                    <a href="assets/img/realestate/1-big.jpg" class="btn caption-zoom" data-gal="prettyPhoto"><i class="fa fa-search"></i></a>
+                                                                    <a href="property-single.html" class="btn caption-link"><i class="fa fa-link"></i></a>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="property-meta">
+                                                <div class="col-sm-6" id="article4Price">
+                                                    <strong>$1111</strong> / month
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <a href="property-single.html" id="article4Details">Details</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item col-sm-6 col-md-4" id="article5">
+                                    <div class="property-wrap">
+                                        <div class="property-inner">
+                                            <h3 class="property-title">
+                                                <a href="#" id="article5Name">Harrison Restaurent</a>
+                                            </h3>
+                                            <h4 class="property-subtitle">
+                                                <a href="#" id="article5Address">Monson Walk</a>
+                                            </h4>
+                                            <div class="property-label property-label-primary" id="article5Lable">Hotel</div>
+                                            <div class="property-picture">
+                                                <div class="thumbnail do-hover">
+
+                                                    <img class="img-responsive" id="article5Image" src="assets/img/realestate/1.jpg" alt=""/>
+                                                    <div class="caption">
+                                                        <div class="caption-wrapper div-table">
+                                                            <div class="caption-inner div-cell">
+                                                                <p class="caption-buttons">
+                                                                    <a href="assets/img/realestate/1-big.jpg" class="btn caption-zoom" data-gal="prettyPhoto"><i class="fa fa-search"></i></a>
+                                                                    <a href="property-single.html" class="btn caption-link"><i class="fa fa-link"></i></a>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="property-meta">
+                                                <div class="col-sm-6" id="article5Price">
+                                                    <strong>$1111</strong> / month
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <a href="property-single.html" id="article5Details">Details</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item col-sm-6 col-md-4" id="article6">
+                                    <div class="property-wrap">
+                                        <div class="property-inner">
+                                            <h3 class="property-title">
+                                                <a href="#" id="article6Name">Harrison Restaurent</a>
+                                            </h3>
+                                            <h4 class="property-subtitle">
+                                                <a href="#" id="article6Address">Monson Walk</a>
+                                            </h4>
+                                            <div class="property-label property-label-primary" id="article6Lable">Hotel</div>
+                                            <div class="property-picture">
+                                                <div class="thumbnail do-hover">
+
+                                                    <img class="img-responsive" id="article6Image" src="assets/img/realestate/1.jpg" alt=""/>
+                                                    <div class="caption">
+                                                        <div class="caption-wrapper div-table">
+                                                            <div class="caption-inner div-cell">
+                                                                <p class="caption-buttons">
+                                                                    <a href="assets/img/realestate/1-big.jpg" class="btn caption-zoom" data-gal="prettyPhoto"><i class="fa fa-search"></i></a>
+                                                                    <a href="property-single.html" class="btn caption-link"><i class="fa fa-link"></i></a>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="property-meta">
+                                                <div class="col-sm-6" id="article6Price">
+                                                    <strong>$1111</strong> / month
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <a href="property-single.html" id="article6Details">Details</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item col-sm-6 col-md-4" id="article7">
+                                    <div class="property-wrap">
+                                        <div class="property-inner">
+                                            <h3 class="property-title">
+                                                <a href="#" id="article7Name">Harrison Restaurent</a>
+                                            </h3>
+                                            <h4 class="property-subtitle">
+                                                <a href="#" id="article7Address">Monson Walk</a>
+                                            </h4>
+                                            <div class="property-label property-label-primary" id="article7Lable">Hotel</div>
+                                            <div class="property-picture">
+                                                <div class="thumbnail do-hover">
+
+                                                    <img class="img-responsive" id="article7Image" src="assets/img/realestate/1.jpg" alt=""/>
+                                                    <div class="caption">
+                                                        <div class="caption-wrapper div-table">
+                                                            <div class="caption-inner div-cell">
+                                                                <p class="caption-buttons">
+                                                                    <a href="assets/img/realestate/1-big.jpg" class="btn caption-zoom" data-gal="prettyPhoto"><i class="fa fa-search"></i></a>
+                                                                    <a href="property-single.html" class="btn caption-link"><i class="fa fa-link"></i></a>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="property-meta">
+                                                <div class="col-sm-6" id="article7Price">
+                                                    <strong>$1111</strong> / month
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <a href="property-single.html" id="article7Details">Details</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item col-sm-6 col-md-4" id="article8">
+                                    <div class="property-wrap">
+                                        <div class="property-inner">
+                                            <h3 class="property-title">
+                                                <a href="#" id="article8Name">Harrison Restaurent</a>
+                                            </h3>
+                                            <h4 class="property-subtitle">
+                                                <a href="#" id="article8Address">Monson Walk</a>
+                                            </h4>
+                                            <div class="property-label property-label-primary" id="article8Lable">Hotel</div>
+                                            <div class="property-picture">
+                                                <div class="thumbnail do-hover">
+
+                                                    <img class="img-responsive" id="article8Image" src="assets/img/realestate/1.jpg" alt=""/>
+                                                    <div class="caption">
+                                                        <div class="caption-wrapper div-table">
+                                                            <div class="caption-inner div-cell">
+                                                                <p class="caption-buttons">
+                                                                    <a href="assets/img/realestate/1-big.jpg" class="btn caption-zoom" data-gal="prettyPhoto"><i class="fa fa-search"></i></a>
+                                                                    <a href="property-single.html" class="btn caption-link"><i class="fa fa-link"></i></a>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="property-meta">
+                                                <div class="col-sm-6" id="article8Price">
+                                                    <strong>$1111</strong> / month
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <a href="property-single.html" id="article8Details">Details</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item col-sm-6 col-md-4" id="article9">
+                                    <div class="property-wrap">
+                                        <div class="property-inner">
+                                            <h3 class="property-title">
+                                                <a href="#" id="article9Name">Harrison Restaurent</a>
+                                            </h3>
+                                            <h4 class="property-subtitle">
+                                                <a href="#" id="article9Address">Monson Walk</a>
+                                            </h4>
+                                            <div class="property-label property-label-primary" id="article9Lable">Hotel</div>
+                                            <div class="property-picture">
+                                                <div class="thumbnail do-hover">
+
+                                                    <img class="img-responsive" id="article9Image" src="assets/img/realestate/1.jpg" alt=""/>
+                                                    <div class="caption">
+                                                        <div class="caption-wrapper div-table">
+                                                            <div class="caption-inner div-cell">
+                                                                <p class="caption-buttons">
+                                                                    <a href="assets/img/realestate/1-big.jpg" class="btn caption-zoom" data-gal="prettyPhoto"><i class="fa fa-search"></i></a>
+                                                                    <a href="property-single.html" class="btn caption-link"><i class="fa fa-link"></i></a>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="property-meta">
+                                                <div class="col-sm-6" id="article9Price">
+                                                    <strong>$1111</strong> / month
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <a href="property-single.html" id="article9Details">Details</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </section>
+
+                            <hr class="page-divider half"/>
+                            <div class="clearfix text-center" data-animation="fadeInUp" data-animation-delay="0">
+                                <a href="#" class="btn btn-lg btn-default">View All Works</a>
+                            </div>
+
+                        </div><!-- /.container.projects -->
+                    </div>
+                </section>
+                <!-- Most Popular Properties -->
+
+                <!-- Main Categories -->
+                <section class="page-section">
+                    <div class="container">
+                        <div class="" data-animation="fadeInUp" data-animation-delay="0">
+                            <div class="block-title text-center">Popular Categories</div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="pop-cat cat1 text-center">
+                                    <a href="#">Eat and Drink</a>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="pop-cat cat2 text-center">
+                                    <a href="#">Living</a>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-sm-6">
+                                <div class="pop-cat cat3 text-center">
+                                    <a href="#">Entertainment</a>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="pop-cat cat4 text-center">
+                                    <a href="#">Membership</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- /Main Categories -->
+
+                <!-- Client Testimonials -->
+                <!--<section class="page-section">
+                    <div class="container">
+                        <div class="" data-animation="fadeInUp" data-animation-delay="0">
+                            <div class="block-title text-center">Client Testimonials</div>
+                        </div>
+                    </div>
+                </section>-->
+                <!-- /Client Testimonials -->
+
+            </div><!-- /.content-area -->
+            <!-- /Content area -->
+
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="container">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li><a href="#">Terms-Privacy Policy About Us</a></li>
+                        <li><a href="#">Impression</a></li>
+                        <li><a href="">Contact Us</a></li>
+                        <li><a href="">Business Owner Login</a></li>
+                    </ul>
+                </div>
+                <!-- / widgets container -->
+
+                <!-- copyrights -->
+                <div class="copyrights">
+                    <div class="container">
+                        <div class="row">
+                            <div class="text-center"><p>&copy; 2014. All Rights Reserved.</p></div>
+                            <div class="text-center">
+                                <ul class="list-inline socical-line text-center">
+                                    <li><a class="bg-red" href="#"><i class="fa fa-facebook"></i></a></li><li>
+                                        <a class="bg-orange" href="#"><i class="fa fa-twitter"></i></a></li><li>
+                                        <a class="bg-yellow" href="#"><i class="fa fa-google-plus"></i></a></li><li>
+                                        <a class="bg-green" href="#"><i class="fa fa-flickr"></i></a></li><li>
+                                        <a class="bg-light-blue" href="#"><i class="fa fa-pinterest"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /.copyrights -->
+            </footer>
+            <!-- /Footer -->
+
+            <div class="totop"><i class="fa fa-angle-up"></i></div>
+
+
+            <!-- Modal Register and Login -->
+            <div class="modal modal-log-reg fade" id="ModalLogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="ModalLabelL">Please, sign in to your account</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div id ="check"></div>
+                            <form class="" role="form">
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input id="txtEmail" class="form-control" type="email" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <input id="txtPassword" class="form-control" type="password" placeholder="">
+                                </div>
                                 <div class="row">
-                                    <div class="col-xs-12 af-outer af-required">
-                                        <div class="filter-title">Search Criteria</div>
-                                        <div class="select-wrapper">
-                                            <input type="text" name="search-criteria" id="criteria" size="30" value="" placeholder="Area/City/Business name" class="form-control placeholder" />
-                                        </div>
+                                    <div class="col-md-6">
+                                        <label class="checkbox">
+                                            <input type="checkbox">
+                                            Remember me
+                                        </label>
                                     </div>
-
-                                    <div class="col-xs-12 af-outer af-required">
-                                        <div class="filter-title">Date</div>
-                                        <div class="input-group">
-                                          <input type="date" name="sdate" id="date" size="30" value="" class="form-control placeholder"/>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-xs-6 af-outer af-required">
-                                        <div class="filter-title">Session</div>
-                                        <div class="select-wrapper">
-                                            <select id="property" name="property" class="selectpicker">
-                                                <option value="none">Morning</option>
-                                                <option value="0">Afternoon</option>
-                                                <option value="1">Evening</option>
-                                                <option value="2">Night</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6 af-outer af-required">
-                                        <div class="filter-title">Guest</div>
-                                        <div class="input-group af-inner">
-                                          <input type="number" class="form-control" min="0" id="gnumber"/>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-xs-12 af-outer af-required">
-                                        <div class="form-group af-inner">
-                                            <!-- To Do, Coming Soon Added -->
-                                            <input type="button" data-toggle="modal" data-target="#ModalSoon" name="submit" class="form-button btn btn-default" id="submit_btn" value="Search" />
-                                        </div>
+                                    <div class="col-md-6">
+                                        <button class="btn btn-success pull-right" type="button" onclick="login(this)" id="signin">Sign In</button>
                                     </div>
                                 </div>
                             </form>
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="map-canvas"></div>
-        </div>
-        <!-- /Google Map -->
-
-        <!-- Call action -->
-        <section class="page-section dark">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12 text-center" data-animation="fadeInLeft" data-animation-delay="100">
-                        <h2 class="media-heading"><a href="addproperty.html">30</a> Days Trial for business Owner</h2>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- /Call action -->
-
-        <!-- Most Popular Properties  -->
-        <section class="page-section">
-            <div class="container">
-                <div class="" data-animation="fadeInUp" data-animation-delay="0">
-                    <div class="block-title text-center">Most Popular</div>
-                </div>
-                <div class="clearfix text-center">
-                    <ul id="filtrable" class="filtrable clearfix" data-animation="fadeInUp" data-animation-delay="100">
-                        <li class="all current"><a href="#" data-filter="*">All</a></li>
-                        <li class="rent"><a href="#" data-filter=".rent">Restaurent</a></li>
-                        <li class="sale"><a href="#" data-filter=".sale">SPA</a></li>
-                        <li class="apartment"><a href="#" data-filter=".apartment">Beer Bars</a></li>
-                    </ul>
-                </div>
-                <div class="container projects">
-                <section class="row items no-padding-off">
-                    <article class="item col-sm-6 col-md-4" id="article1">
-                        <div class="property-wrap">
-                            <div class="property-inner">
-                                <h3 class="property-title">
-                                    <a href="#" id="article1Name">Harrison Restaurent</a>
-                                </h3>
-                                <h4 class="property-subtitle">
-                                    <a href="#" id="article1Address">Monson Walk</a>
-                                </h4>
-                                <div class="property-label property-label-primary" id="article1Lable">Hotel</div>
-                                <div class="property-picture">
-                                    <div class="thumbnail do-hover">
-
-                                        <img class="img-responsive" id="article1Image" src="assets/img/realestate/1.jpg" alt=""/>
-                                        <div class="caption">
-                                            <div class="caption-wrapper div-table">
-                                                <div class="caption-inner div-cell">
-                                                    <p class="caption-buttons">
-                                                        <a href="assets/img/realestate/1-big.jpg" class="btn caption-zoom" data-gal="prettyPhoto"><i class="fa fa-search"></i></a>
-                                                        <a href="property-single.html" class="btn caption-link"><i class="fa fa-link"></i></a>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="property-meta">
-                                    <div class="col-sm-6" id="article1Price">
-                                        <strong>$1111</strong> / month
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <a href="property-single.html" id="article1Details">Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="item col-sm-6 col-md-4" id="article2">
-                        <div class="property-wrap">
-                            <div class="property-inner">
-                                <h3 class="property-title">
-                                    <a href="#" id="article2Name">Harrison Restaurent</a>
-                                </h3>
-                                <h4 class="property-subtitle">
-                                    <a href="#" id="article2Address">Monson Walk</a>
-                                </h4>
-                                <div class="property-label property-label-primary" id="article2Lable">Hotel</div>
-                                <div class="property-picture">
-                                    <div class="thumbnail do-hover">
-
-                                        <img class="img-responsive" id="article2Image" src="assets/img/realestate/1.jpg" alt=""/>
-                                        <div class="caption">
-                                            <div class="caption-wrapper div-table">
-                                                <div class="caption-inner div-cell">
-                                                    <p class="caption-buttons">
-                                                        <a href="assets/img/realestate/1-big.jpg" class="btn caption-zoom" data-gal="prettyPhoto"><i class="fa fa-search"></i></a>
-                                                        <a href="property-single.html" class="btn caption-link"><i class="fa fa-link"></i></a>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="property-meta">
-                                    <div class="col-sm-6" id="article2Price">
-                                        <strong>$1111</strong> / month
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <a href="property-single.html" id="article2Details">Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="item col-sm-6 col-md-4" id="article3">
-                        <div class="property-wrap">
-                            <div class="property-inner">
-                                <h3 class="property-title">
-                                    <a href="#" id="article3Name">Harrison Restaurent</a>
-                                </h3>
-                                <h4 class="property-subtitle">
-                                    <a href="#" id="article3Address">Monson Walk</a>
-                                </h4>
-                                <div class="property-label property-label-primary" id="article3Lable">Hotel</div>
-                                <div class="property-picture">
-                                    <div class="thumbnail do-hover">
-
-                                        <img class="img-responsive" id="article3Image" src="assets/img/realestate/1.jpg" alt=""/>
-                                        <div class="caption">
-                                            <div class="caption-wrapper div-table">
-                                                <div class="caption-inner div-cell">
-                                                    <p class="caption-buttons">
-                                                        <a href="assets/img/realestate/1-big.jpg" class="btn caption-zoom" data-gal="prettyPhoto"><i class="fa fa-search"></i></a>
-                                                        <a href="property-single.html" class="btn caption-link"><i class="fa fa-link"></i></a>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="property-meta">
-                                    <div class="col-sm-6" id="article3Price">
-                                        <strong>$1111</strong> / month
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <a href="property-single.html" id="article3Details">Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="item col-sm-6 col-md-4" id="article4">
-                        <div class="property-wrap">
-                            <div class="property-inner">
-                                <h3 class="property-title">
-                                    <a href="#" id="article4Name">Harrison Restaurent</a>
-                                </h3>
-                                <h4 class="property-subtitle">
-                                    <a href="#" id="article4Address">Monson Walk</a>
-                                </h4>
-                                <div class="property-label property-label-primary" id="article4Lable">Hotel</div>
-                                <div class="property-picture">
-                                    <div class="thumbnail do-hover">
-
-                                        <img class="img-responsive" id="article4Image" src="assets/img/realestate/1.jpg" alt=""/>
-                                        <div class="caption">
-                                            <div class="caption-wrapper div-table">
-                                                <div class="caption-inner div-cell">
-                                                    <p class="caption-buttons">
-                                                        <a href="assets/img/realestate/1-big.jpg" class="btn caption-zoom" data-gal="prettyPhoto"><i class="fa fa-search"></i></a>
-                                                        <a href="property-single.html" class="btn caption-link"><i class="fa fa-link"></i></a>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="property-meta">
-                                    <div class="col-sm-6" id="article4Price">
-                                        <strong>$1111</strong> / month
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <a href="property-single.html" id="article4Details">Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="item col-sm-6 col-md-4" id="article5">
-                        <div class="property-wrap">
-                            <div class="property-inner">
-                                <h3 class="property-title">
-                                    <a href="#" id="article5Name">Harrison Restaurent</a>
-                                </h3>
-                                <h4 class="property-subtitle">
-                                    <a href="#" id="article5Address">Monson Walk</a>
-                                </h4>
-                                <div class="property-label property-label-primary" id="article5Lable">Hotel</div>
-                                <div class="property-picture">
-                                    <div class="thumbnail do-hover">
-
-                                        <img class="img-responsive" id="article5Image" src="assets/img/realestate/1.jpg" alt=""/>
-                                        <div class="caption">
-                                            <div class="caption-wrapper div-table">
-                                                <div class="caption-inner div-cell">
-                                                    <p class="caption-buttons">
-                                                        <a href="assets/img/realestate/1-big.jpg" class="btn caption-zoom" data-gal="prettyPhoto"><i class="fa fa-search"></i></a>
-                                                        <a href="property-single.html" class="btn caption-link"><i class="fa fa-link"></i></a>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="property-meta">
-                                    <div class="col-sm-6" id="article5Price">
-                                        <strong>$1111</strong> / month
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <a href="property-single.html" id="article5Details">Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="item col-sm-6 col-md-4" id="article6">
-                        <div class="property-wrap">
-                            <div class="property-inner">
-                                <h3 class="property-title">
-                                    <a href="#" id="article6Name">Harrison Restaurent</a>
-                                </h3>
-                                <h4 class="property-subtitle">
-                                    <a href="#" id="article6Address">Monson Walk</a>
-                                </h4>
-                                <div class="property-label property-label-primary" id="article6Lable">Hotel</div>
-                                <div class="property-picture">
-                                    <div class="thumbnail do-hover">
-
-                                        <img class="img-responsive" id="article6Image" src="assets/img/realestate/1.jpg" alt=""/>
-                                        <div class="caption">
-                                            <div class="caption-wrapper div-table">
-                                                <div class="caption-inner div-cell">
-                                                    <p class="caption-buttons">
-                                                        <a href="assets/img/realestate/1-big.jpg" class="btn caption-zoom" data-gal="prettyPhoto"><i class="fa fa-search"></i></a>
-                                                        <a href="property-single.html" class="btn caption-link"><i class="fa fa-link"></i></a>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="property-meta">
-                                    <div class="col-sm-6" id="article6Price">
-                                        <strong>$1111</strong> / month
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <a href="property-single.html" id="article6Details">Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="item col-sm-6 col-md-4" id="article7">
-                        <div class="property-wrap">
-                            <div class="property-inner">
-                                <h3 class="property-title">
-                                    <a href="#" id="article7Name">Harrison Restaurent</a>
-                                </h3>
-                                <h4 class="property-subtitle">
-                                    <a href="#" id="article7Address">Monson Walk</a>
-                                </h4>
-                                <div class="property-label property-label-primary" id="article7Lable">Hotel</div>
-                                <div class="property-picture">
-                                    <div class="thumbnail do-hover">
-
-                                        <img class="img-responsive" id="article7Image" src="assets/img/realestate/1.jpg" alt=""/>
-                                        <div class="caption">
-                                            <div class="caption-wrapper div-table">
-                                                <div class="caption-inner div-cell">
-                                                    <p class="caption-buttons">
-                                                        <a href="assets/img/realestate/1-big.jpg" class="btn caption-zoom" data-gal="prettyPhoto"><i class="fa fa-search"></i></a>
-                                                        <a href="property-single.html" class="btn caption-link"><i class="fa fa-link"></i></a>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="property-meta">
-                                    <div class="col-sm-6" id="article7Price">
-                                        <strong>$1111</strong> / month
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <a href="property-single.html" id="article7Details">Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="item col-sm-6 col-md-4" id="article8">
-                        <div class="property-wrap">
-                            <div class="property-inner">
-                                <h3 class="property-title">
-                                    <a href="#" id="article8Name">Harrison Restaurent</a>
-                                </h3>
-                                <h4 class="property-subtitle">
-                                    <a href="#" id="article8Address">Monson Walk</a>
-                                </h4>
-                                <div class="property-label property-label-primary" id="article8Lable">Hotel</div>
-                                <div class="property-picture">
-                                    <div class="thumbnail do-hover">
-
-                                        <img class="img-responsive" id="article8Image" src="assets/img/realestate/1.jpg" alt=""/>
-                                        <div class="caption">
-                                            <div class="caption-wrapper div-table">
-                                                <div class="caption-inner div-cell">
-                                                    <p class="caption-buttons">
-                                                        <a href="assets/img/realestate/1-big.jpg" class="btn caption-zoom" data-gal="prettyPhoto"><i class="fa fa-search"></i></a>
-                                                        <a href="property-single.html" class="btn caption-link"><i class="fa fa-link"></i></a>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="property-meta">
-                                    <div class="col-sm-6" id="article8Price">
-                                        <strong>$1111</strong> / month
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <a href="property-single.html" id="article8Details">Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="item col-sm-6 col-md-4" id="article9">
-                        <div class="property-wrap">
-                            <div class="property-inner">
-                                <h3 class="property-title">
-                                    <a href="#" id="article9Name">Harrison Restaurent</a>
-                                </h3>
-                                <h4 class="property-subtitle">
-                                    <a href="#" id="article9Address">Monson Walk</a>
-                                </h4>
-                                <div class="property-label property-label-primary" id="article9Lable">Hotel</div>
-                                <div class="property-picture">
-                                    <div class="thumbnail do-hover">
-
-                                        <img class="img-responsive" id="article9Image" src="assets/img/realestate/1.jpg" alt=""/>
-                                        <div class="caption">
-                                            <div class="caption-wrapper div-table">
-                                                <div class="caption-inner div-cell">
-                                                    <p class="caption-buttons">
-                                                        <a href="assets/img/realestate/1-big.jpg" class="btn caption-zoom" data-gal="prettyPhoto"><i class="fa fa-search"></i></a>
-                                                        <a href="property-single.html" class="btn caption-link"><i class="fa fa-link"></i></a>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="property-meta">
-                                    <div class="col-sm-6" id="article9Price">
-                                        <strong>$1111</strong> / month
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <a href="property-single.html" id="article9Details">Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                </section>
-
-                <hr class="page-divider half"/>
-                <div class="clearfix text-center" data-animation="fadeInUp" data-animation-delay="0">
-                    <a href="#" class="btn btn-lg btn-default">View All Works</a>
-                </div>
-
-                </div><!-- /.container.projects -->
-            </div>
-        </section>
-        <!-- Most Popular Properties -->
-
-        <!-- Main Categories -->
-        <section class="page-section">
-            <div class="container">
-                <div class="" data-animation="fadeInUp" data-animation-delay="0">
-                    <div class="block-title text-center">Popular Categories</div>
-                </div>
-
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="pop-cat cat1 text-center">
-                            <a href="#">Eat and Drink</a>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="pop-cat cat2 text-center">
-                            <a href="#">Living</a>
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <div class="col-sm-6">
-                        <div class="pop-cat cat3 text-center">
-                            <a href="#">Entertainment</a>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="pop-cat cat4 text-center">
-                            <a href="#">Membership</a>
+                        <div class="modal-footer">
+                            <p>Lost your password? <a href="#">Click here to recover.</a></p>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- /Main Categories -->
 
-        <!-- Client Testimonials -->
-        <!--<section class="page-section">
-            <div class="container">
-                <div class="" data-animation="fadeInUp" data-animation-delay="0">
-                    <div class="block-title text-center">Client Testimonials</div>
-                </div>
-            </div>
-        </section>-->
-        <!-- /Client Testimonials -->
-
-    </div><!-- /.content-area -->
-    <!-- /Content area -->
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <ul class="nav navbar-nav navbar-left">
-              <li><a href="#">Terms-Privacy Policy About Us</a></li>
-              <li><a href="#">Impression</a></li>
-              <li><a href="">Contact Us</a></li>
-              <li><a href="">Business Owner Login</a></li>
-            </ul>
-        </div>
-        </div><!-- / widgets container -->
-
-        <!-- copyrights -->
-        <div class="copyrights">
-            <div class="container">
-                <div class="row">
-                    <div class="text-center"><p>&copy; 2014. All Rights Reserved.</p></div>
-                    <div class="text-center">
-                        <ul class="list-inline socical-line text-center">
-                            <li><a class="bg-red" href="#"><i class="fa fa-facebook"></i></a></li><li>
-                            <a class="bg-orange" href="#"><i class="fa fa-twitter"></i></a></li><li>
-                            <a class="bg-yellow" href="#"><i class="fa fa-google-plus"></i></a></li><li>
-                            <a class="bg-green" href="#"><i class="fa fa-flickr"></i></a></li><li>
-                            <a class="bg-light-blue" href="#"><i class="fa fa-pinterest"></i></a></li>
-                        </ul>
+            <div class="modal modal-log-reg fade" id="ModalRegister" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="ModalLabelR">Please, register to access all features</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. </p>
+                            <form class="" role="form">
+                                <div class="form-group">
+                                    <label>Name</label>
+                                    <input id="regName" class="form-control" type="regname" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input id="regEmail" class="form-control" type="regemail" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <input id="regPassword" class="form-control" type="regpassword" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label>Repeat Password</label>
+                                    <input id="regRepeatPassword" class="form-control" type="regrepeatpassword" placeholder="">
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <button type="button" class="btn pull-right" data-dismiss="modal" aria-hidden="true">Close</button>
+                                        <button class="btn btn-warning pull-right" type="submit">Sign In</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <p>Got here by mistake? <a href="index.html">Home</a></p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div><!-- /.copyrights -->
-    </footer>
-    <!-- /Footer -->
-
-    <div class="totop"><i class="fa fa-angle-up"></i></div>
-
-
-    <!-- Modal Register and Login -->
-    <div class="modal modal-log-reg fade" id="ModalLogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="ModalLabelL">Please, sign in to your account</h4>
-                </div>
-                <div class="modal-body">
-                	<div id ="check"></div>
-                    <form class="" role="form">
-                        <div class="form-group">
-                            <label>Email</label>
-                            <input id="txtEmail" class="form-control" type="email" placeholder="">
+            <!-- Modal Register and Login -->
+            <!-- Modal Soon -->
+            <div class="modal modal-log-reg fade" id="ModalSoon" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="ModalLabelR">Please, register to access all features</h4>
                         </div>
-                        <div class="form-group">
-                            <label>Password</label>
-                            <input id="txtPassword" class="form-control" type="password" placeholder="">
+                        <div class="modal-body">
+                            <h1 class="modal-title">Coming Soon !!!</h1>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label class="checkbox">
-                                    <input type="checkbox">
-                                    Remember me
-                                </label>
-                            </div>
-                            <div class="col-md-6">
-                                <button class="btn btn-success pull-right" type="button" onclick="login(this)" id="signin">Sign In</button>
-                            </div>
+                        <div class="modal-footer">
+                            <p>Got here by mistake? <a href="index.html">Home</a></p>
                         </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <p>Lost your password? <a href="#">Click here to recover.</a></p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <div class="modal modal-log-reg fade" id="ModalRegister" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="ModalLabelR">Please, register to access all features</h4>
-                </div>
-                <div class="modal-body">
-                    <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. </p>
-                    <form class="" role="form">
-                        <div class="form-group">
-                            <label>Name</label>
-                            <input id="regName" class="form-control" type="regname" placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <label>Email</label>
-                            <input id="regEmail" class="form-control" type="regemail" placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <label>Password</label>
-                            <input id="regPassword" class="form-control" type="regpassword" placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <label>Repeat Password</label>
-                            <input id="regRepeatPassword" class="form-control" type="regrepeatpassword" placeholder="">
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <button type="button" class="btn pull-right" data-dismiss="modal" aria-hidden="true">Close</button>
-                                <button class="btn btn-warning pull-right" type="submit">Sign In</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <p>Got here by mistake? <a href="index.html">Home</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Modal Register and Login -->
-    <!-- Modal Soon -->
-    <div class="modal modal-log-reg fade" id="ModalSoon" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="ModalLabelR">Please, register to access all features</h4>
-                </div>
-                <div class="modal-body">
-                    <h1 class="modal-title">Coming Soon !!!</h1>
-                </div>
-                <div class="modal-footer">
-                    <p>Got here by mistake? <a href="index.html">Home</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Modal Soon
-</div><!-- /.wrapper -->
-<!-- JS Global -->
-</body>
+            <!-- Modal Soon-->
+        </div><!-- /.wrapper -->
+        <!-- JS Global -->
+    </body>
 </html>

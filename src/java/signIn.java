@@ -13,6 +13,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -69,6 +70,15 @@ public class signIn extends HttpServlet {
                                         "emailId"));
                         request.getSession(true).setAttribute("type", rs.getString(
                                 "type"));
+                        Cookie cookieName = new Cookie("name", rs.getString(
+                                "name"));
+                        response.addCookie(cookieName);
+                        Cookie cookieEmailId = new Cookie("emailId", rs.getString(
+                                "emailId"));
+                        response.addCookie(cookieEmailId);
+                        Cookie cookieType = new Cookie("type", rs.getString(
+                                "type"));
+                        response.addCookie(cookieType);
                         jc.put("success", "true");
                         jc.put("type", rs.getString("type"));
                         out.println(jc);
