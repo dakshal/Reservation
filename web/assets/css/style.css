@@ -45,3 +45,22 @@ body > div.wrapper > footer > div > ul > li> a:hover {
 .map-filter {
   z-index: 1;
 }
+.panel-group > .panel.panel-default > .panel-heading > .panel-title > a {
+     background-color: #333333;
+    color: white;
+     border: 0px none;
+}
+.map-filter.category {
+	padding:0px;
+  left: -55;
+  right: 90;
+}
+.panel-group {
+  margin: 0px;
+}
+.panel-collapse.collapse.in > .list-group {
+	margin-bottom: 0px;
+}
+.panel-collapse.collapse.in > .list-group > .list-group-item {
+
+}
